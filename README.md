@@ -2,7 +2,7 @@
 
 # Purpose
 
-This repository's sole purpose is to demonstrate how to built a Vagrant box with virtual box provider using Packer which provides redis64 webserver, and then test it with KitchenCI.
+This repository's sole purpose is to demonstrate how to built a Vagrant box with virtual box provider using Packer which provides MySQL database server, and then test it with KitchenCI.
 
 # Technologies in use :
 
@@ -10,8 +10,6 @@ This repository's sole purpose is to demonstrate how to built a Vagrant box with
 - Vagrant
 - VirtualBox
 - MySQL
-- KitchenCI
-- InSpec
 
 # How to install the needed technologies :
 
@@ -24,7 +22,7 @@ This repository's sole purpose is to demonstrate how to built a Vagrant box with
 
 - Clone this git repository using `git clone https://github.com/martinhristov90/packerMysql.git`
 - Switch into the directory of the project using : `cd packerMysql`
-- Let Packer build the Vagrant box for you using : `packer build templete.json`
+- Let Packer build the Vagrant box for you using : `packer build template.json`
 - You should now have Vagrant box which upon booting starts MySQL database server.
 - Use command `vagrant box add ubuntu-1604-vbox.box --name DESIRED_NAME` to add the box to Vagrant.
 - List available boxes with `vagrant box list`, the imported box should be listed.
