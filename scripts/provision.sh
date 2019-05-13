@@ -51,9 +51,12 @@ mount -o loop $VBOX_ISO /mnt
 yes|sh /mnt/VBoxLinuxAdditions.run
 umount /mnt
 
-# Installing Nginx webserver
+# Installing MySQL database
 
-apt-get install -y nginx
+ROOT_SQL_PASS=SET_YOUR_PASS
+debconf-set-selections <<< "mysql-server mysql-server/root_password password $ROOT_SQL_PASS"
+debconf-set-selections <<< "mysql-server mysql-server/root_password_again password $ROOT_SQL_PASS"
+DEBIAN_FRONTEND=noninteractive apt-get install -y mysql-server
 
 #Cleanup VirtualBox
 rm $VBOX_ISO
